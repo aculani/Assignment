@@ -139,7 +139,7 @@ footer a {
     {
         width: 100%;
     }
-    header ul li a {
+    header ul li  {
         display: none;
     }
     
