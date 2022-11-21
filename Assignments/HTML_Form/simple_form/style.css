@@ -1,0 +1,30 @@
+fieldset{
+    display: flex;
+    flex-flow: column;
+    width: 500px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+label{
+    display: flex;
+    align-items: center;
+}
+label text{
+    width: 120px;
+}
+.col1 {
+    width: 120px;
+}
+input{
+    height: 30px;
+    width: 300px;
+}
+textarea{
+    width: 300px;
+}
+.col2{
+    display: flex;
+    align-self: flex-start;
+    width: 120px;
+}
