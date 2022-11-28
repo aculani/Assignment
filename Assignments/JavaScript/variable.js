@@ -1,5 +1,4 @@
-let x = String,
-    y = Number,
-    z = Boolean,
-    w = undefined,
+let x = "Hello World",
+    y = 12,
+    z = false,
     b = null;
