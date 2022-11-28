@@ -1,10 +1,9 @@
-let too = String,
-    y = Number,
-    z = Boolean,
-    w = undefined,
+let str = 'String',
+    y = 12,
+    z = true,
     n = null;
-console.log(typeof too);
+console.log(typeof str);
 console.log(typeof y);
 console.log(typeof z);
 console.log(typeof w);
-console.log(typeof n);
+console.log(n);
