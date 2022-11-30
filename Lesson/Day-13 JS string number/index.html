@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const str1 = 'Hello';
+        const str2 = "My name is\'\'\'\'\'\"";
+        const str3 = `\ Tengisbold`;
+        const message = str1 + '\n' + str2 + str3;
+        console.log(message);
+        const message1 = `${str1}  everyone ${str2} ${str3}`;
+        console.log(message1);
+        console.log(str1.length);
+        console.log(str1.charAt(0));
+        console.log(str1[1]);
+        console.log(str2.toUpperCase());
+        console.log(str2.toLowerCase());
+        let firstname = 'John';
+        let fullname = firstname.concat(' ', 'Smith');
+        let fullnames = firstname + ' ' + 'Smith';
+        console.log(fullname);
+        console.log(fullnames);
+
+        let fullstring = 'JavaScript is programming language';
+        //ehleh ba tuunees hoish
+        const substr1 = fullstring.substr(11);
+
+        //ehlel bolon niit temdegt
+        const substr2 = fullstring.substr(11, 6);
+
+        //ehleh bolon tugsguliin indexeer
+        const substr3 = fullstring.substring(11, 15);
+        console.log(substr1);
+        console.log(substr2);
+        console.log(substr3);
+        let str4 = "This is a string";
+        console.log(str4.indexOf("is"));
+
+
+        // concat
+        const iof = "This is string";
+        const iof1 = iof.substr(0, iof.indexOf(' is'));
+        const iof2 = iof.substring(iof.indexOf(' is') + 3);
+        const result = iof1 + iof2;
+        console.log(result);
+
+        // trim iluu zai ustgah
+        let rawstring = '  Hi   '
+
+        //prompt
+
+        let prompt1 = Number(prompt('messag'));
+        let prompt2 = Number(prompt('too oruulnuu1'));
+        console.log(prompt1 + prompt2);
+
+        //math
+        let x = Math.PI;
+        console.log(x.toFixed(2));
+
+        alert(Math.random().toFixed(1) * 10)
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
