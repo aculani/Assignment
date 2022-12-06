@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function pyramid(rowLength) {
+        //     let result = '';
+        //     for (let i = 1; i <= rowLength; i++) {
+        //         for (let j = 0; j < rowLength - i; j++) {
+        //             result += ' ';
+        //         }
+        //         for (let j = 0; j < i; j++) {
+        //             result += '* ';
+        //         }
+        //         result += '\n';
+        //     }
+        //     console.log(result);
+        // }
+        // pyramid(10);
+        // let input = prompt('Register oruulna uu?');
+        // if (Number(input.charAt(8)) % 2 === 0) { console.log('emegtei') } else { console.log('eregtei') };
+
+
+
+
+        let arr = [2, -1, 3, 5, 10, -10];
+        console.log(arr);
+        function arraySort(x) {
+            for (let j = 0; j < x.length; j++) {
+                for (i = 0; i < x.length; i++) {
+                    if (x[i] >= x[i + 1]) {
+                        [x[i], x[i + 1]] = [x[i + 1], x[i]];
+                    }
+                }
+            }
+
+        }
+        arraySort(arr);
+        console.log(arr);
+
+
+
+
+    </script>
+</body>
+
+</html>
