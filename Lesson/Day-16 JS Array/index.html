@@ -11,15 +11,17 @@
 <body>
 
     <script>
+
+
         let n = prompt('Мөрний тоо оруулна уу?');
-        let utga = [1], mur = [];
-        for (let i = 0; i <= n; i++) {
-            for (let j = 0; j <= i; j++) {
-                utga[i] = mur[i][] + mur[i][];
-                console.log(mur);
+        let utga = [], mur = [1], result;
+        for (let j = 0; j < n; j++) {
+            for (let i = 0; i < n; i++) {
+                utga[i + 1] = mur[i];
+                utga[0] = 0;
+                result[i] = mur[i] + utga[i];
             }
         }
-
 
 
     </script>
