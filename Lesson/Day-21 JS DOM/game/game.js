@@ -1,8 +1,22 @@
 
-const tileCount = 4;
-
+const tileCount = 9;
+let isTimeOut = false;
 let score = 0;
 let highScore = 0;
+let seconds = 0;
+let minutes = 0;
+
+
+function updateTimer() {
+    seconds += 1;
+    if (seconds == 60) {
+        minutes += 1;
+        seconds = 0;
+    }
+    timeTarget.innerHTML = `${minutes}:${seconds}`;
+}
+
+
 function updateScore(points) {
     score += points;
     scoreTarget.innerHTML = score;
@@ -20,6 +34,8 @@ const scoreTarget = document.querySelector("#scoreTarget")
 scoreTarget.innerHTML = score;
 const highTarget = document.querySelector("#highTarget")
 highTarget.innerHTML = highScore;
+const timeTarget = document.querySelector("#timeTarget")
+
 
 
 const parent = document.querySelector("ul");
@@ -48,7 +64,14 @@ function getDifferentColor(colors) {
 }
 
 
-
+const timer = setTimeout(function () {
+    isTimeOut = true;
+    if (highScorecal(score) <= updateScore(score)) {
+        highScorecal(score) = updateScore();
+        score = 0;
+        updateScore(0);
+    }
+}, 5000);
 
 
 
@@ -61,7 +84,7 @@ function redDraw() {
     parent.innerHTML = "";
     const colors = getRandomColor();
 
-    const randomIndex = getRandomNumber(0, tileCount - 1);
+    const randomIndex = getRandomNumber(0, TILE_COUNT - 1);
 
     for (let i = 0; i < tileCount; i++) {
         const li = document.createElement("li");
@@ -74,27 +97,39 @@ function redDraw() {
             li.style.backgroundColor = getDifferentColor(colors);
         }
         li.addEventListener("click", function () {
-            if (!isNormal) {
-                updateScore(1);
-                x = x - 5;
-                redDraw();
+            if (!isTimeOut) {
+                if (!isNormal) {
+                    updateScore(1);
+                    if (score > 5) {
+                        clearTimeout(timer);
+                    }
+                    x = x - 2;
+                    redDraw();
 
 
+                }
+                else {
+                    if (highScorecal(score) <= updateScore(score)) {
+                        highScorecal(score) = updateScore();
+                    }
+                    score = 0;
+                    updateScore(0);
+                    alert("Game Over");
+                    redDraw();
+
+                    highScorecal(score);
+                }
             }
             else {
-                score = 0;
-                updateScore(0);
-                alert("Game Over");
-                redDraw();
-                highScorecal(score);
+                alert("Time run out your score:", score)
             }
         })
-
-
-
         parent.appendChild(li);
     }
 }
 
-
 redDraw();
+
+setInterval(updateTimer, 1000)
+
+
