@@ -121,7 +121,7 @@ const puzzle = [
 ]
 let found = 0;
 let flippedItems;
-
+let chosenCard=0;
 
 function getTile(value) {
     const tile = document.createElement('li');
@@ -133,11 +133,13 @@ function getTile(value) {
     tileBack.innerHTML = '';
     tileBack.classList.add('back');
     tile.appendChild(tileBack);
+    tile.addEventListener('click',);
     return tile;
 }
-function checkDuplicate() {
 
-}
+
+
+
 
 
 const gameTarget = document.querySelector(`#gameTarget`);
@@ -147,14 +149,8 @@ for (let row = 0; row < puzzle.length; row++) {
     for (let col = 0; col < rowItems.length; col++) {
         gameTarget.appendChild(getTile(rowItems[col])
         );
-        // puzzle.setAttribute('x', row);
-        // puzzle.setAttribute('y', col);
-
-    }
+    }  
 }
 
-document.addEventListener('click', function (e) {
-    for (let i; i < 2; i++) {
-        div.classList.add('active');
-    }
-});
+
+
