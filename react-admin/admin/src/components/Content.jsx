@@ -1,12 +1,19 @@
 import ContentHeading from "./Content/ContentHeading";
-import ContentTableWrapper from "./Content/ContentTableWrappper";
 import ContentWrapper from "./Content/ContentWrapper";
+import DynamicModal from '../components/utils/DynamicModal';
+import ContentTableWrapper from './Content/ContentTableWrappper';
+import { useState } from 'react';
+import PostCreate from "./Blogs/PostCreate";
 
 export default function Content() {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
         <>
             <ContentWrapper>
-                <ContentHeading title="Blog Post" />
+                <DynamicModal show={show} handleClose={handleClose} title="Create Post" content={<PostCreate />} />
+                <ContentHeading title="Blog Post" handleShow={handleShow} />
                 <ContentTableWrapper>
                     <thead>
                         <tr>

@@ -1,15 +1,23 @@
 import { GrAddCircle } from "react-icons/gr";
-export default function ContentHeading({ title }) {
+import Button from 'react-bootstrap/Button';
+
+
+
+export default function ContentHeading({ title, handleShow }) {
+
     return (
-        <div className='d-flex justify-content-between align-tems-center'>
-            <div>
-                <h1>
-                    {title}
-                </h1>
+        <>
+            <div className='d-flex justify-content-between align-tems-center'>
+                <div>
+                    <h1>
+                        {title}
+                    </h1>
+                </div>
+                <div>
+                    <Button size="sm" variant="primary" onClick={handleShow}>Create <GrAddCircle /></Button>
+                </div>
             </div>
-            <div>
-                <button className='btn btn-sm btn-primary mt-2'>Create <GrAddCircle /></button>
-            </div>
-        </div>
+        </>
     );
 }
+
