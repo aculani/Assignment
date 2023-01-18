@@ -5,6 +5,7 @@ import NavbarWrapper from './Navbar/NavbarWrapper';
 export default function Navbar({ onToggle }) {
   const menuItems = [
     { label: 'Articles', link: '/articles' },
+    { label: 'Categories', link: '/categories' },
     { label: 'Feedback', link: '#' },
     { label: 'Files', link: '#' },
   ];
@@ -13,7 +14,7 @@ export default function Navbar({ onToggle }) {
     { label: 'Inbox', link: '#' },
     { label: 'Settings', link: '#' },
     { label: '---', link: '#' },
-    { label: 'Sign out', link: '/signin' },
+    { label: 'Sign out', link: '/signout' },
   ];
 
   return (
