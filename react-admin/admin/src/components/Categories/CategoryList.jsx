@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SlPencil, SlTrash } from 'react-icons/sl';
 import { toast } from 'react-toastify'
-const ListItem = ({ item, index }) => {
+const ListItem = ({ item, index, onEdit }) => {
   const [deleted, setDeleted] = useState(false);
   const navigate = useNavigate();
   const deleteItem = () => {
@@ -43,7 +43,7 @@ const ListItem = ({ item, index }) => {
       <td>{item.name}</td>
       <td>{item.description}</td>
       <td style={{ whiteSpace: 'nowrap' }}>
-        <button className="btn btn-sm btn-outline-primary me-2">
+        <button className="btn btn-sm btn-outline-primary me-2" onClick={() => onEdit(item)}>
           <SlPencil />
         </button>
         <button className="btn btn-sm btn-outline-danger" onClick={deleteItem}>
@@ -54,7 +54,7 @@ const ListItem = ({ item, index }) => {
   );
 }
 
-export default function CategoryList({ items }) {
+export default function CategoryList({ items, onEdit }) {
 
   return (
     <table className="table table-bordered table-hover">
@@ -68,7 +68,7 @@ export default function CategoryList({ items }) {
       </thead>
       <tbody>
         {items?.map((item, index) => (
-          <ListItem item={item} index={index + 1} key={`list-item-${index}`} />
+          <ListItem item={item} index={index + 1} key={`list-item-${index}`} onEdit={onEdit} />
         ))}
       </tbody>
     </table>

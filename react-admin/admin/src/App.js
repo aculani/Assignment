@@ -24,12 +24,12 @@ export default function App() {
 
 
 
-  // useEffect(() => {
-  //   const myData = localStorage.getItem('me');
-  //   if (myData !== 'undefined') {
-  //     setMe(JSON.parse(myData));
-  //   }
-  // }, []);
+  useEffect(() => {
+    const myData = localStorage.getItem('me');
+    if (myData !== 'undefined') {
+      setMe(JSON.parse(myData));
+    }
+  }, []);
 
   if (!me) {
     return (

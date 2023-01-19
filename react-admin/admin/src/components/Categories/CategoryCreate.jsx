@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-export default function CategoryCreate() {
+export default function CategoryCreate({ afterSubmit }) {
   const [description, setDescription] = useState('');
   const [name, setName] = useState('');
   const navigate = useNavigate();
@@ -26,6 +26,7 @@ export default function CategoryCreate() {
       .then((data) => {
         if (statusCode === 200) {
           toast.success('amjilttai nemegdlee');
+          afterSubmit(data.body);
         } else {
           if (statusCode === 403 || statusCode === 401) {
             navigate('/signout');
