@@ -1,0 +1,58 @@
+@import url('./init.scss');
+
+@import url('../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css');
+@import url('../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css');
+
+$accentColor: #008080;
+$size: 100px;
+
+body {
+    background-color: #f0f0f0;
+}
+
+header {
+    background: white;
+    box-shadow: 0 0 10px rgba(#000, 0.1);
+
+    .header-top {
+        padding: 15px 0;
+    }
+
+    .brand {
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .search-btn {
+        width: 30px;
+        height: 30px;
+        background-color: rgba(#f0f0f0, 0.5);
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        a {
+            padding: 10px 15px;
+            display: block;
+            background-color: $accentColor;
+            opacity: 0.5;
+            color: #f0f0f0;
+            text-transform: uppercase;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .header-bottom {
+        background-color: $accentColor;
+    }
+}
