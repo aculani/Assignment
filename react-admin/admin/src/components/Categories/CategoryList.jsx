@@ -7,33 +7,20 @@ import axios from 'axios';
 const ListItem = ({ item, index, onEdit }) => {
   const [deleted, setDeleted] = useState(false);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const deleteItem = () => {
-    let statusCode;
-    axios.delete('http://localhost:8000/categories' + item.id)
-      .then((res) => {
-
-        statusCode = res.status;
-        return res.json();
-
+    axios.delete('http://localhost:8000/categories/' + item.id)
+      .then(() => {
+        toast.success('amjilttai ustgalaa')
+        setDeleted(true);
       })
-      .then((data) => {
-        console.log(statusCode)
-        if (statusCode === 200) {
-          toast.success('amjilttai ustgalaa')
-          setDeleted(true);
-        } else {
-          if (statusCode === 403 || statusCode === 401) {
-            navigate('/signout');
-          }
-          toast.error(data.message);
-        }
-      }).catch((err) => {
+      .catch((err) => {
         console.log(err);
         toast.error('aldaa garlaa');
       });
   };
+
   if (deleted) return <></>;
 
   return (
