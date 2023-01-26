@@ -2,22 +2,21 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SlPencil, SlTrash } from 'react-icons/sl';
 import { toast } from 'react-toastify'
+import axios from 'axios';
+
 const ListItem = ({ item, index, onEdit }) => {
   const [deleted, setDeleted] = useState(false);
+
   const navigate = useNavigate();
+
   const deleteItem = () => {
     let statusCode;
-    fetch('https://demo-api-one.vercel.app/api/categories', {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: localStorage.getItem('token')
-      },
-      body: JSON.stringify({ id: item.id }),
-    })
+    axios.delete('http://localhost:8000/categories' + item.id)
       .then((res) => {
+
         statusCode = res.status;
         return res.json();
+
       })
       .then((data) => {
         console.log(statusCode)
