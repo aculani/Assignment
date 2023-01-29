@@ -12,6 +12,13 @@ export default function Signin() {
   const navigate = useNavigate();
 
   const submitSingIn = () => {
+
+    
+
+
+
+
+
     let status = 200;
     fetch('https://demo-api-one.vercel.app/api/signin', {
       method: 'POST',
@@ -36,6 +43,11 @@ export default function Signin() {
       .catch((err) => {
         console.log(err);
       });
+
+
+
+
+
   };
 
   return (
